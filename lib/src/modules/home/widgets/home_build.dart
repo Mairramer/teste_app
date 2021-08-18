@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/core/consts/app_images_const.dart';
+import '../../../core/consts/app_images_const.dart';
 
 import '../home_controller.dart';
 import 'card_option_widget.dart';

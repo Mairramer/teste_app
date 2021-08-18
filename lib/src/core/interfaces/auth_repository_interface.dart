@@ -1,4 +1,4 @@
-import 'package:teste_vollup/src/core/shared/responses/response_default.dart';
+import '../shared/responses/response_default.dart';
 
 abstract class IAuthRepository {
   // ignore: public_member_api_docs

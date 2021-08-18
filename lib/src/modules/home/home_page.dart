@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/modules/home/widgets/appbar/app_bar_widget.dart';
-import 'package:teste_vollup/src/modules/home/widgets/appbar/get_balance.dart';
-import 'package:teste_vollup/src/modules/home/widgets/app_navigation/custom_bottomNav_widget.dart';
-import 'package:teste_vollup/src/modules/home/widgets/customFloatButton/custom_floatingAction_widget.dart';
-import 'package:teste_vollup/src/modules/home/widgets/home_build.dart';
-import 'package:teste_vollup/src/modules/login/login_page.dart';
-import 'package:teste_vollup/src/modules/register/register_page.dart';
+import 'widgets/appbar/app_bar_widget.dart';
+import 'widgets/app_navigation/custom_bottomNav_widget.dart';
+import 'widgets/customFloatButton/custom_floatingAction_widget.dart';
+import 'widgets/home_build.dart';
+import '../login/login_page.dart';
+import '../register/register_page.dart';
 
 import 'home_controller.dart';
 

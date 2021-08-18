@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_vollup/src/core/auth/auth_controller.dart';
+import '../../core/auth/auth_controller.dart';
 
 import 'login_controller.dart';
 import 'widgets/scroll_widget.dart';

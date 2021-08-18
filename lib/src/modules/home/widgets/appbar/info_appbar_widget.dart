@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/core/consts/app_images_const.dart';
-import 'package:teste_vollup/src/core/consts/app_text_styles_const.dart';
-import 'package:teste_vollup/src/modules/home/widgets/appbar/get_balance.dart';
+import '../../../../core/consts/app_images_const.dart';
+import '../../../../core/consts/app_text_styles_const.dart';
+import 'get_balance.dart';
 
 class InfoAppBarWidget extends StatefulWidget {
   const InfoAppBarWidget({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/core/consts/app_text_styles_const.dart';
-import 'package:teste_vollup/src/modules/home/widgets/detail_widget.dart';
+import '../../../core/consts/app_text_styles_const.dart';
+import 'detail_widget.dart';
 
 class CardOptionWidget extends StatelessWidget {
   final String text;

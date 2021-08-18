@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/modules/home/widgets/appbar/question_card/get_name_widget.dart';
+import 'get_name_widget.dart';
 
 class QuestionCardWidget extends StatefulWidget {
   const QuestionCardWidget({Key? key}) : super(key: key);

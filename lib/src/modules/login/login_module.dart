@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_vollup/src/core/auth/auth_controller.dart';
+import '../../core/auth/auth_controller.dart';
 
 import 'login_controller.dart';
 import 'login_page.dart';

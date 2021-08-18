@@ -1,4 +1,4 @@
-import 'package:teste_vollup/src/core/shared/enums/app_enums.dart';
+import '../enums/app_enums.dart';
 
 class DefaultResponse<T> {
   late final T object;

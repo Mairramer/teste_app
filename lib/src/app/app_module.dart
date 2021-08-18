@@ -1,13 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:teste_vollup/src/core/auth/auth_controller.dart';
-import 'package:teste_vollup/src/core/consts/routers_const.dart';
-import 'package:teste_vollup/src/core/interfaces/auth_repository_interface.dart';
-import 'package:teste_vollup/src/core/repositories/auth_repository.dart';
-import 'package:teste_vollup/src/modules/home/home_page.dart';
-import 'package:teste_vollup/src/modules/login/login_controller.dart';
-import 'package:teste_vollup/src/modules/login/login_page.dart';
-import 'package:teste_vollup/src/modules/register/register_page.dart';
+import '../core/auth/auth_controller.dart';
+import '../core/consts/routers_const.dart';
+import '../core/interfaces/auth_repository_interface.dart';
+import '../core/repositories/auth_repository.dart';
+import '../modules/home/home_page.dart';
+import '../modules/login/login_controller.dart';
+import '../modules/login/login_page.dart';
+import '../modules/register/register_page.dart';
 
 import 'app_controller.dart';
 

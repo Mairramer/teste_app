@@ -1,11 +1,9 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:teste_vollup/src/core/auth/auth_controller.dart';
-import 'package:teste_vollup/src/core/interfaces/auth_repository_interface.dart';
-import 'package:teste_vollup/src/core/shared/errors/register_interceptor.dart';
-import 'package:teste_vollup/src/core/shared/responses/response_builder.dart';
-import 'package:teste_vollup/src/core/shared/responses/response_default.dart';
+import '../interfaces/auth_repository_interface.dart';
+import '../shared/errors/register_interceptor.dart';
+import '../shared/responses/response_builder.dart';
+import '../shared/responses/response_default.dart';
 
 class AuthRepository implements IAuthRepository {
   final FirebaseAuth firebaseAuth;

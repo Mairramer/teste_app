@@ -1,5 +1,5 @@
-import 'package:teste_vollup/src/core/shared/enums/app_enums.dart';
-import 'package:teste_vollup/src/core/shared/errors/register_interceptor.dart';
+import '../enums/app_enums.dart';
+import '../errors/register_interceptor.dart';
 
 import 'response_default.dart';
 

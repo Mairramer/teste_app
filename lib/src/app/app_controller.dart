@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:teste_vollup/src/core/consts/routers_const.dart';
+import '../core/consts/routers_const.dart';
 
 class AppController {
   var _user = FirebaseAuth.instance.currentUser!.uid;

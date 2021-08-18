@@ -2,8 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-import 'package:teste_vollup/src/core/consts/routers_const.dart';
-import 'package:teste_vollup/src/core/interfaces/auth_repository_interface.dart';
+import '../consts/routers_const.dart';
+import '../interfaces/auth_repository_interface.dart';
 import 'package:get/get.dart';
 
 part 'auth_controller.g.dart';

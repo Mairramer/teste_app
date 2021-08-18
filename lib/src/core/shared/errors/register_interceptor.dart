@@ -1,4 +1,4 @@
-import 'package:teste_vollup/src/core/interfaces/error_intercept_interface.dart';
+import '../../interfaces/error_intercept_interface.dart';
 
 class RegisterErrorInterceptor implements IErrorInterceptor {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/core/consts/app_images_const.dart';
-import 'package:teste_vollup/src/modules/home/widgets/appbar/info_appbar_widget.dart';
+import '../../../../core/consts/app_images_const.dart';
+import 'info_appbar_widget.dart';
 
 import 'question_card/question_card_widget.dart';
 

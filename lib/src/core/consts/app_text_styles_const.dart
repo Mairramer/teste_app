@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:teste_vollup/src/core/consts/app_colors_const.dart';
+import 'app_colors_const.dart';
 
 class AppTextStylesConst {
   static final homeOptions = TextStyle(
