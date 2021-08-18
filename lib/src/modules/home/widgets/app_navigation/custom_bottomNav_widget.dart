@@ -47,8 +47,6 @@ class _CustomBottomNavigatorWidgetState
             children: [
               IconButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => GetBalance()));
                     setState(() => controller.setPage(1));
                   },
                   icon: Icon(
