@@ -31,7 +31,6 @@ class HomeBuild extends StatelessWidget {
               CardOptionWidget(
                 onTap: () {
                   controller.incrementValue();
-                  print('clicked');
                 },
                 image: AppImagesConst.wallet,
                 text: 'Carregar\n',
