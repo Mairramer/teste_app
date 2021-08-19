@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teste_vollup/src/core/consts/routers_const.dart';
+import 'package:teste/src/core/consts/routers_const.dart';
 import '../../../../core/consts/app_colors_const.dart';
-import '../../../login/login_page.dart';
-
 import '../../home_controller.dart';
 
 class CustomBottomNavigatorWidget extends StatefulWidget {
