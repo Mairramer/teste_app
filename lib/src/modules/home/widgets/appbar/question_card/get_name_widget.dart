@@ -63,24 +63,27 @@ class _GetNameState extends State<GetName> {
         if (snapshot.connectionState == ConnectionState.done) {
           var data = snapshot.data!.data() as Map;
 
-          String name = data['name'];
-          return Container(
-            padding: EdgeInsets.only(top: 20),
-            width: MediaQuery.of(context).size.width,
-            height: 100,
-            child: Text.rich(
-              TextSpan(
-                  text: 'Olá, ',
-                  style: AppTextStylesConst.homeOptions,
-                  children: [
-                    TextSpan(
-                        text: '$name\n',
-                        style: TextStyle(
-                          color: AppColorsConst.green,
-                        )),
-                    TextSpan(text: 'Qual sua próxima operação?')
-                  ]),
-              textAlign: TextAlign.center,
+          String? name = data['name'];
+
+          return GestureDetector(
+            child: Container(
+              padding: EdgeInsets.only(top: 20),
+              width: MediaQuery.of(context).size.width,
+              height: 100,
+              child: Text.rich(
+                TextSpan(
+                    text: 'Olá, ',
+                    style: AppTextStylesConst.homeOptions,
+                    children: [
+                      TextSpan(
+                          text: '$name\n',
+                          style: TextStyle(
+                            color: AppColorsConst.green,
+                          )),
+                      TextSpan(text: 'Qual sua próxima operação?')
+                    ]),
+                textAlign: TextAlign.center,
+              ),
             ),
           );
         }

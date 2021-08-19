@@ -16,6 +16,7 @@ abstract class _AuthControllerBase with Store {
   _AuthControllerBase() {
     authRepository = Modular.get<IAuthRepository>();
   }
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @observable
   String name = '';

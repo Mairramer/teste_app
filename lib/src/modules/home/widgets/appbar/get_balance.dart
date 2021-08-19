@@ -20,14 +20,14 @@ class _GetBalanceState extends State<GetBalance> {
           AsyncSnapshot<DocumentSnapshot<Object?>> snapshot) {
         if (snapshot.connectionState == ConnectionState.none) {
           return Text(
-            '0.00',
+            'R\$ 0.00',
             style: AppTextStylesConst.balanceValue,
           );
         }
 
         if (snapshot.hasData && !snapshot.data!.exists) {
           return Text(
-            '0.00',
+            'R\$ 0.00',
             style: AppTextStylesConst.balanceValue,
           );
         }

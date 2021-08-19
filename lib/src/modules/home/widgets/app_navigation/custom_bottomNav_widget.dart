@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:teste_vollup/src/core/consts/routers_const.dart';
 import '../../../../core/consts/app_colors_const.dart';
 import '../../../login/login_page.dart';
 
@@ -28,8 +30,7 @@ class _CustomBottomNavigatorWidgetState
             children: [
               IconButton(
                   onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
+                    Get.toNamed(RoutersConst.login);
                     setState(() => controller.setPage(0));
                   },
                   icon: Icon(
