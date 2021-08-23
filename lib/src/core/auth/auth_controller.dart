@@ -70,6 +70,8 @@ abstract class _AuthControllerBase with Store {
       password: password,
     );
     if (response.success) {
+      var uid = FirebaseAuth.instance.currentUser;
+      await uid!.updateDisplayName(name);
       verifyUser();
       Get.toNamed(RoutersConst.home);
     } else {
