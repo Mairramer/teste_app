@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../core/auth/auth_controller.dart';
-import '../core/consts/routers_const.dart';
 import '../core/interfaces/auth_repository_interface.dart';
 import '../core/repositories/auth_repository.dart';
 import '../modules/home/home_page.dart';
@@ -36,8 +35,8 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute(RoutersConst.home, child: (_, __) => HomePage()),
-    ChildRoute(RoutersConst.login, child: (_, __) => LoginPage()),
-    ChildRoute(RoutersConst.register, child: (_, __) => RegisterPage())
+    ChildRoute('/', child: (_, __) => HomePage()),
+    ChildRoute('/login', child: (_, __) => LoginPage()),
+    ChildRoute('/register', child: (_, __) => RegisterPage())
   ];
 }

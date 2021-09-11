@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:teste/src/core/consts/routers_const.dart';
+import 'package:teste/src/modules/login/login_page.dart';
+
 import '../../../../core/consts/app_colors_const.dart';
 import '../../home_controller.dart';
 
@@ -28,7 +29,7 @@ class _CustomBottomNavigatorWidgetState
             children: [
               IconButton(
                   onPressed: () {
-                    Get.toNamed(RoutersConst.login);
+                    Get.to(LoginPage());
                     setState(() => controller.setPage(0));
                   },
                   icon: Icon(

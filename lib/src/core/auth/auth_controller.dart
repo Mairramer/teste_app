@@ -2,7 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mobx/mobx.dart';
-import '../consts/routers_const.dart';
+import 'package:teste/src/modules/home/home_page.dart';
+
 import '../interfaces/auth_repository_interface.dart';
 import 'package:get/get.dart';
 
@@ -43,7 +44,7 @@ abstract class _AuthControllerBase with Store {
     await authRepository.doLoginGoogle().then((response) {
       if (response.success) {
         verifyUser();
-        Get.toNamed(RoutersConst.home);
+        Get.to(HomePage());
       } else {
         print(response.message);
       }
@@ -56,7 +57,7 @@ abstract class _AuthControllerBase with Store {
         .then((response) {
       if (response.success) {
         verifyUser();
-        Get.toNamed(RoutersConst.home);
+        Get.to(HomePage());
       } else {
         throw response;
       }
@@ -73,7 +74,7 @@ abstract class _AuthControllerBase with Store {
       var uid = FirebaseAuth.instance.currentUser;
       await uid!.updateDisplayName(name);
       verifyUser();
-      Get.toNamed(RoutersConst.home);
+      Get.to(HomePage());
     } else {
       throw response;
     }
@@ -82,7 +83,7 @@ abstract class _AuthControllerBase with Store {
   Future<void> doLogout() async {
     var response = await authRepository.logOut();
     if (response.success) {
-      Get.toNamed(RoutersConst.home);
+      Get.to(HomePage());
     } else {
       throw response;
     }

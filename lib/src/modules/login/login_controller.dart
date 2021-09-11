@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import '../../core/consts/routers_const.dart';
+import 'package:teste/src/modules/register/register_page.dart';
 
 class LoginController {
   void doRegister() {
-    Get.toNamed(RoutersConst.register);
+    Get.to(RegisterPage());
   }
 }

@@ -4,7 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../core/consts/routers_const.dart';
+import 'package:teste/src/modules/home/home_page.dart';
+import 'package:teste/src/modules/login/login_page.dart';
 
 class AppController {
   var _user = FirebaseAuth.instance.currentUser!.uid;
@@ -15,9 +16,9 @@ class AppController {
     if (user != null) {
       saveUserId(user);
       _user = user;
-      Get.toNamed(RoutersConst.home);
+      Get.to(HomePage());
     } else {
-      Get.toNamed(RoutersConst.login);
+      Get.to(LoginPage());
     }
   }
 
