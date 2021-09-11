@@ -30,3 +30,6 @@ I also used firebase auth and firebase store.
 
 ![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-ffca28?style=for-the-badge&logo=firebase&logoColor=black)
+
+## Caso queira ver como funciona no firebase:
+Basta criar um projeto no Firebase e executar os testes
