@@ -11,7 +11,6 @@ class InfoAppBarWidget extends StatefulWidget {
 }
 
 class _InfoAppBarWidgetState extends State<InfoAppBarWidget> {
-  final String text = '0.00';
   bool _isShown = true;
   Icon _icon = Icon(Icons.visibility_off_outlined);
   Icon _iconShow = Icon(Icons.visibility_outlined);
@@ -41,12 +40,15 @@ class _InfoAppBarWidgetState extends State<InfoAppBarWidget> {
           ),
           Expanded(
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Visibility(
-                  visible: _isShown,
-                  child: GetBalance(),
+                Expanded(
+                  flex: 1,
+                  child: Visibility(
+                    visible: _isShown,
+                    child: GetBalance(),
+                  ),
                 ),
                 IconButton(
                   icon: (_isShown) ? _icon : _iconShow,

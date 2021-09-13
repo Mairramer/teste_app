@@ -16,9 +16,9 @@ class AppController {
     if (user != null) {
       saveUserId(user);
       _user = user;
-      Get.to(HomePage());
+      Get.to(() => HomePage());
     } else {
-      Get.to(LoginPage());
+      Get.to(() => LoginPage());
     }
   }
 

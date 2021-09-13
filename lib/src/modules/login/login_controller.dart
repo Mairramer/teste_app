@@ -3,6 +3,6 @@ import 'package:teste/src/modules/register/register_page.dart';
 
 class LoginController {
   void doRegister() {
-    Get.to(RegisterPage());
+    Get.to(() => RegisterPage());
   }
 }

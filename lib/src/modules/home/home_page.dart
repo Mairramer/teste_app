@@ -23,14 +23,20 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     final controller = HomeController();
 
-    return Scaffold(
-        appBar: AppBarWidget(),
-        backgroundColor: Colors.white.withOpacity(0.94),
-        bottomNavigationBar: CustomBottomNavigatorWidget(),
-        floatingActionButton: CustomFloatingActionButton(),
-        floatingActionButtonLocation: HomePage.centerDocked,
-        body: [HomeBuild(), LoginPage(), RegisterPage()][controller.currentPage]
-        //
-        );
+    return SafeArea(
+      child: Scaffold(
+          appBar: AppBarWidget(),
+          backgroundColor: Colors.white.withOpacity(0.94),
+          bottomNavigationBar: CustomBottomNavigatorWidget(),
+          floatingActionButton: CustomFloatingActionButton(),
+          floatingActionButtonLocation: HomePage.centerDocked,
+          body: [
+            HomeBuild(),
+            LoginPage(),
+            RegisterPage()
+          ][controller.currentPage]
+          //
+          ),
+    );
   }
 }

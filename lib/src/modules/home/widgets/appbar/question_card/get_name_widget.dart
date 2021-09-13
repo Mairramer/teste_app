@@ -12,84 +12,85 @@ class GetName extends StatefulWidget {
 class _GetNameState extends State<GetName> {
   @override
   Widget build(BuildContext context) {
-    final String auth = FirebaseAuth.instance.currentUser!.uid;
+    String? auth = FirebaseAuth.instance.currentUser!.uid;
+    final Future<DocumentSnapshot<Map<String, dynamic>>> stream =
+        FirebaseFirestore.instance.collection('users').doc('$auth').get();
 
-    return FutureBuilder<DocumentSnapshot>(
-      future: FirebaseFirestore.instance.collection('users').doc('$auth').get(),
-      builder: (BuildContext context,
-          AsyncSnapshot<DocumentSnapshot<Object?>> snapshot) {
-        if (snapshot.hasError) {
-          return Container(
-              padding: EdgeInsets.only(top: 20),
-              width: MediaQuery.of(context).size.width,
-              height: 100,
-              child: Text.rich(
-                TextSpan(
-                    text: 'Olá, ',
-                    style: AppTextStylesConst.homeOptions,
-                    children: [
-                      TextSpan(
-                          text: 'erro\n',
-                          style: TextStyle(
-                            color: AppColorsConst.green,
-                          )),
-                      TextSpan(text: 'Qual sua próxima operação?')
-                    ]),
-                textAlign: TextAlign.center,
-              ));
-        }
+    if (auth.isNotEmpty) {
+      return FutureBuilder<DocumentSnapshot<Object>?>(
+        future: stream,
+        builder: (BuildContext context, snapshot) {
+          if (snapshot.hasError) {
+            return Container(
+                padding: EdgeInsets.only(top: 20),
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+                child: Text.rich(
+                  TextSpan(
+                      text: 'Olá, ',
+                      style: AppTextStylesConst.homeOptions,
+                      children: [
+                        TextSpan(
+                            text: 'erro\n',
+                            style: TextStyle(
+                              color: AppColorsConst.green,
+                            )),
+                        TextSpan(text: 'Qual sua próxima operação?')
+                      ]),
+                  textAlign: TextAlign.center,
+                ));
+          }
 
-        if (snapshot.hasData && !snapshot.data!.exists) {
-          return Container(
-              padding: EdgeInsets.only(top: 20),
-              width: MediaQuery.of(context).size.width,
-              height: 100,
-              child: Text.rich(
-                TextSpan(
-                    text: 'Olá, ',
-                    style: AppTextStylesConst.homeOptions,
-                    children: [
-                      TextSpan(
-                          text: 'Usuario\n',
-                          style: TextStyle(
-                            color: AppColorsConst.green,
-                          )),
-                      TextSpan(text: 'Qual sua próxima operação?')
-                    ]),
-                textAlign: TextAlign.center,
-              ));
-        }
+          if (snapshot.connectionState == ConnectionState.done) {
+            var data = snapshot.data!.data() as Map<String, dynamic>;
 
-        if (snapshot.connectionState == ConnectionState.done) {
-          var data = snapshot.data!.data() as Map;
+            String? name = data['name'];
 
-          String? name = data['name'];
-
-          return GestureDetector(
-            child: Container(
-              padding: EdgeInsets.only(top: 20),
-              width: MediaQuery.of(context).size.width,
-              height: 100,
-              child: Text.rich(
-                TextSpan(
-                    text: 'Olá, ',
-                    style: AppTextStylesConst.homeOptions,
-                    children: [
-                      TextSpan(
-                          text: '$name\n',
-                          style: TextStyle(
-                            color: AppColorsConst.green,
-                          )),
-                      TextSpan(text: 'Qual sua próxima operação?')
-                    ]),
-                textAlign: TextAlign.center,
+            return GestureDetector(
+              child: Container(
+                padding: EdgeInsets.only(top: 20),
+                width: MediaQuery.of(context).size.width,
+                height: 100,
+                child: Text.rich(
+                  TextSpan(
+                      text: 'Olá, ',
+                      style: AppTextStylesConst.homeOptions,
+                      children: [
+                        TextSpan(
+                            text: '$name\n',
+                            style: TextStyle(
+                              color: AppColorsConst.green,
+                            )),
+                        TextSpan(text: 'Qual sua próxima operação?')
+                      ]),
+                  textAlign: TextAlign.center,
+                ),
               ),
-            ),
-          );
-        }
+            );
+          }
 
-        return Text('...');
-      },
-    );
+          return Text('...');
+        },
+      );
+    } else {
+      return Container(
+          padding: EdgeInsets.only(top: 20),
+          width: MediaQuery.of(context).size.width,
+          height: 100,
+          child: Text.rich(
+            TextSpan(
+                text: 'Olá, ',
+                style: AppTextStylesConst.homeOptions,
+                children: [
+                  TextSpan(
+                      text: 'Usuario\n',
+                      style: TextStyle(
+                        color: AppColorsConst.green,
+                      )),
+                  TextSpan(text: 'Qual sua próxima operação?')
+                ]),
+            textAlign: TextAlign.center,
+          ));
+    }
   }
 }

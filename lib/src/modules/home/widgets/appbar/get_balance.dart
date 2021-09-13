@@ -12,28 +12,22 @@ class GetBalance extends StatefulWidget {
 class _GetBalanceState extends State<GetBalance> {
   @override
   Widget build(BuildContext context) {
-    final String auth = FirebaseAuth.instance.currentUser!.uid;
+    final String? auth = FirebaseAuth.instance.currentUser!.uid;
+    final Future<DocumentSnapshot<Map<String, dynamic>>> stream =
+        FirebaseFirestore.instance.collection('users').doc('$auth').get();
 
-    return FutureBuilder<DocumentSnapshot>(
-      future: FirebaseFirestore.instance.collection('users').doc('$auth').get(),
-      builder: (BuildContext context,
-          AsyncSnapshot<DocumentSnapshot<Object?>> snapshot) {
-        if (snapshot.connectionState == ConnectionState.none) {
+    return FutureBuilder<DocumentSnapshot<Object>>(
+      future: stream,
+      builder: (BuildContext context, snapshot) {
+        print(stream);
+
+        if (snapshot.hasError)
           return Text(
             'R\$ 0.00',
             style: AppTextStylesConst.balanceValue,
           );
-        }
-
-        if (snapshot.hasData && !snapshot.data!.exists) {
-          return Text(
-            'R\$ 0.00',
-            style: AppTextStylesConst.balanceValue,
-          );
-        }
-
         if (snapshot.connectionState == ConnectionState.done) {
-          var data = snapshot.data!.data() as Map;
+          var data = snapshot.data!.data() as Map<String, dynamic>;
           String balance = data['balance'].toString();
 
           return Text(
@@ -43,7 +37,9 @@ class _GetBalanceState extends State<GetBalance> {
           );
         }
 
-        return CircularProgressIndicator();
+        return Center(
+          child: CircularProgressIndicator(),
+        );
       },
     );
   }

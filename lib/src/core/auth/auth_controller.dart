@@ -44,7 +44,7 @@ abstract class _AuthControllerBase with Store {
     await authRepository.doLoginGoogle().then((response) {
       if (response.success) {
         verifyUser();
-        Get.to(HomePage());
+        Get.to(() => HomePage());
       } else {
         print(response.message);
       }
@@ -57,7 +57,7 @@ abstract class _AuthControllerBase with Store {
         .then((response) {
       if (response.success) {
         verifyUser();
-        Get.to(HomePage());
+        Get.to(() => HomePage());
       } else {
         throw response;
       }
@@ -74,7 +74,7 @@ abstract class _AuthControllerBase with Store {
       var uid = FirebaseAuth.instance.currentUser;
       await uid!.updateDisplayName(name);
       verifyUser();
-      Get.to(HomePage());
+      Get.to(() => HomePage());
     } else {
       throw response;
     }
@@ -83,7 +83,7 @@ abstract class _AuthControllerBase with Store {
   Future<void> doLogout() async {
     var response = await authRepository.logOut();
     if (response.success) {
-      Get.to(HomePage());
+      Get.to(() => HomePage());
     } else {
       throw response;
     }
